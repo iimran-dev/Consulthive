@@ -38,8 +38,8 @@ export const images = {
     articleTwo: unsplash("photo-1576086213369-97a306d36557", "q=80&w=900&auto=format&fit=crop"),
   },
 
-  /** Final CTA — earth from space, evoking global standards. */
-  finalCta: unsplash("photo-1451187580459-43490279c0fa", "q=80&w=1200&auto=format&fit=crop"),
+  /** Final CTA — gold and silver desk globe from Unsplash (Ay5VDmOaKBo). */
+  finalCta: unsplash("photo-1600907055749-d6cc7e75efd4", "q=85&w=2200&auto=format&fit=crop"),
 
   /** Placeholder avatar portraits for sample testimonials. */
   testimonials: {

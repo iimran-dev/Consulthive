@@ -29,11 +29,14 @@ const socials: { label: string; href: string; icon: LucideIcon }[] = [
 ];
 
 const quickLinks = [
-  { label: "The Journey", href: "#journey" },
   { label: "Why Consulthive", href: "#about" },
+  { label: "Certifications", href: "#certifications" },
   { label: "Our Process", href: "#process" },
+  { label: "Industries", href: "#industries" },
   { label: "Success Stories", href: "#stories" },
   { label: "Testimonials", href: "#testimonials" },
+  { label: "Insights", href: "#insights" },
+  { label: "CREQAI", href: "#creqai" },
 ];
 
 const certificationLinks = ["ISO 9001", "ISO 14001", "ISO 45001", "ISO 27001", "NABL", "NABH"];

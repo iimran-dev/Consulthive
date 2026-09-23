@@ -22,10 +22,13 @@ export const contact = {
 } as const;
 
 export const navLinks = [
-  { label: "Certifications", href: "#certifications" },
-  { label: "Industries", href: "#industries" },
-  { label: "Services", href: "#process" },
-  { label: "Resources", href: "#insights" },
   { label: "About", href: "#about" },
+  { label: "Certifications", href: "#certifications" },
+  { label: "Process", href: "#process" },
+  { label: "Industries", href: "#industries" },
+  { label: "Stories", href: "#stories" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Insights", href: "#insights" },
+  { label: "CREQAI", href: "#creqai" },
   { label: "Contact", href: "#contact" },
 ] as const;

@@ -34,6 +34,7 @@ type BookButtonProps = {
   variant?: Variant;
   label?: string;
   interest?: string;
+  onClick?: () => void;
 };
 
 export function BookButton({
@@ -41,13 +42,17 @@ export function BookButton({
   variant = "primary",
   label = "Book Free Consultation",
   interest,
+  onClick,
 }: BookButtonProps) {
   const openDialog = useConsultation((s) => s.openDialog);
 
   return (
     <button
       type="button"
-      onClick={() => openDialog(interest)}
+      onClick={() => {
+        onClick?.();
+        openDialog(interest);
+      }}
       className={cn(base, variants[variant], "px-6 py-3.5", className)}
     >
       {label}

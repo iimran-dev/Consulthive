@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Sora } from "next/font/google";
+import "lenis/dist/lenis.css";
 import "./globals.css";
+import { LenisProvider } from "@/components/shared/lenis-provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -13,6 +15,14 @@ const sora = Sora({
   subsets: ["latin"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+  themeColor: "#060f24",
+};
 
 export const metadata: Metadata = {
   title: "Consulthive — ISO Certification & Compliance Consulting",
@@ -43,7 +53,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${sora.variable}`}>
-      <body className="bg-white font-sans text-ink antialiased">{children}</body>
+      <body className="min-h-screen bg-white font-sans text-ink antialiased">
+        <LenisProvider>{children}</LenisProvider>
+      </body>
     </html>
   );
 }
+

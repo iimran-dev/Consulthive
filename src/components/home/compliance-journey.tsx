@@ -46,7 +46,7 @@ export function ComplianceJourney() {
         <div className="absolute -right-40 bottom-0 h-[560px] w-[560px] rounded-full bg-electric-500/[0.06] blur-3xl" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="The Consulthive Method"
           title="The Compliance Journey"

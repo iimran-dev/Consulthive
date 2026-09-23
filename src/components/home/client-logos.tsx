@@ -42,7 +42,7 @@ const marks: ReactNode[] = [
 
 function LogoItem({ name, index }: { name: string; index: number }) {
   return (
-    <div className="flex items-center gap-3 text-navy-900/35 transition-colors duration-300 hover:text-royal-600">
+    <div className="flex items-center gap-2.5 text-navy-900/35 transition-colors duration-300 hover:text-royal-600 sm:gap-3">
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -51,11 +51,11 @@ function LogoItem({ name, index }: { name: string; index: number }) {
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden
-        className="h-7 w-7 shrink-0"
+        className="h-6 w-6 shrink-0 sm:h-7 sm:w-7"
       >
         {marks[index % marks.length]}
       </svg>
-      <span className="whitespace-nowrap font-display text-lg font-semibold tracking-tight">
+      <span className="whitespace-nowrap font-display text-base font-semibold tracking-tight sm:text-lg">
         {name}
       </span>
     </div>
@@ -66,19 +66,19 @@ export function ClientLogos() {
   return (
     <section
       aria-label="Client logos"
-      className="relative border-y border-navy-900/[0.07] bg-white py-12 md:py-14"
+      className="relative border-y border-navy-900/[0.07] bg-white py-10 md:py-14"
     >
-      <p className="mx-auto w-full max-w-7xl px-6 text-center text-[11px] font-semibold uppercase tracking-[0.24em] text-navy-900/40 lg:px-8">
+      <p className="mx-auto w-full max-w-7xl px-4 text-center text-[10px] font-semibold uppercase tracking-[0.2em] text-navy-900/40 min-[380px]:text-[11px] min-[380px]:tracking-[0.24em] sm:px-6 lg:px-8">
         Trusted by teams across manufacturing, healthcare, IT, and more
       </p>
 
       {/* Infinite marquee — list rendered twice for a seamless loop */}
-      <div className="relative mt-9 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
-        <div className="flex w-max animate-marquee items-center gap-14 pr-14 hover:[animation-play-state:paused]">
+      <div className="relative mt-7 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] sm:mt-9 sm:[mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+        <div className="flex w-max animate-marquee items-center gap-8 pr-8 hover:[animation-play-state:paused] active:[animation-play-state:paused] sm:gap-14 sm:pr-14">
           {clientLogos.map((logo, i) => (
             <LogoItem key={logo.id} name={logo.name} index={i} />
           ))}
-          <div aria-hidden className="flex items-center gap-14">
+          <div aria-hidden className="flex items-center gap-8 sm:gap-14">
             {clientLogos.map((logo, i) => (
               <LogoItem key={logo.id} name={logo.name} index={i} />
             ))}
@@ -86,7 +86,7 @@ export function ClientLogos() {
         </div>
       </div>
 
-      <p className="mt-7 text-center text-[11px] text-navy-900/35">
+      <p className="mt-6 text-center text-[10px] text-navy-900/35 sm:mt-7 sm:text-[11px]">
         Representative placeholder logos — verified client marks will replace
         these.
       </p>

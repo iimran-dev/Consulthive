@@ -33,18 +33,18 @@ export function SectionHeading({
     >
       <p
         className={cn(
-          "flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em]",
+          "flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.18em] min-[380px]:gap-3 min-[380px]:text-xs min-[380px]:tracking-[0.22em]",
           align === "center" && "justify-center",
           dark ? "text-electric-400" : "text-royal-600"
         )}
       >
-        <span aria-hidden className="h-px w-8 bg-current opacity-50" />
+        <span aria-hidden="true" className="h-px w-5 bg-current opacity-50 min-[380px]:w-8" />
         {eyebrow}
-        <span aria-hidden className="h-px w-8 bg-current opacity-50" />
+        <span aria-hidden="true" className="h-px w-5 bg-current opacity-50 min-[380px]:w-8" />
       </p>
       <h2
         className={cn(
-          "mt-5 font-display text-3xl font-bold tracking-[-0.02em] sm:text-4xl lg:text-[44px] lg:leading-[1.08]",
+          "mt-3.5 font-display text-2xl font-bold tracking-[-0.02em] min-[380px]:text-[28px] sm:mt-5 sm:text-4xl lg:text-[44px] lg:leading-[1.08]",
           dark ? "text-white" : "text-ink"
         )}
       >
@@ -53,7 +53,7 @@ export function SectionHeading({
       {description ? (
         <p
           className={cn(
-            "mt-5 text-base leading-relaxed sm:text-lg",
+            "mt-3 text-xs leading-relaxed min-[380px]:text-sm sm:mt-5 sm:text-base sm:leading-relaxed lg:text-lg",
             dark ? "text-white/65" : "text-body"
           )}
         >

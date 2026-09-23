@@ -11,8 +11,8 @@ export function CertificationProcess() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="process" className="relative bg-mist py-20 md:py-28 lg:py-32">
-      <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
+    <section id="process" className="relative bg-mist py-14 sm:py-20 md:py-28 lg:py-32">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="The Process"
           title="A Clear Path To Certification"
@@ -62,26 +62,26 @@ export function CertificationProcess() {
         </div>
 
         {/* -------- Mobile: vertical rail -------- */}
-        <ol className="relative ml-3 mt-14 space-y-9 border-l-2 border-navy-900/[0.08] lg:hidden">
+        <ol className="relative ml-2 mt-10 space-y-7 border-l-2 border-navy-900/[0.08] sm:ml-4 sm:mt-14 sm:space-y-9 lg:hidden">
           {processSteps.map((step, i) => (
-            <li key={step.id} className="group relative pl-8">
+            <li key={step.id} className="group relative pl-6 sm:pl-8">
               <span
                 aria-hidden
                 className="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-[3px] border-white bg-electric-500 shadow-soft"
               />
               <Reveal delay={i * 0.08}>
-                <span className="block font-display text-4xl font-bold text-navy-900/[0.08]">
+                <span className="block font-display text-3xl font-bold text-navy-900/[0.08] sm:text-4xl">
                   {step.number}
                 </span>
-                <div className="mt-3 flex items-center gap-3">
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-navy-900/[0.1] bg-white text-navy-700 shadow-soft transition-all duration-500 group-hover:border-transparent group-hover:bg-gradient-to-br group-hover:from-royal-600 group-hover:to-electric-500 group-hover:text-white">
-                    <step.icon className="h-4.5 w-4.5" aria-hidden />
+                <div className="mt-2.5 flex items-center gap-2.5 sm:mt-3 sm:gap-3">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-navy-900/[0.1] bg-white text-navy-700 shadow-soft transition-all duration-500 group-hover:border-transparent group-hover:bg-gradient-to-br group-hover:from-royal-600 group-hover:to-electric-500 group-hover:text-white sm:h-10 sm:w-10">
+                    <step.icon className="h-4 w-4 sm:h-4.5 sm:w-4.5" aria-hidden />
                   </span>
-                  <h3 className="font-display text-lg font-semibold tracking-tight text-ink">
+                  <h3 className="font-display text-base font-semibold tracking-tight text-ink min-[380px]:text-lg">
                     {step.title}
                   </h3>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-body">{step.description}</p>
+                <p className="mt-2 text-xs leading-relaxed text-body sm:text-sm">{step.description}</p>
               </Reveal>
             </li>
           ))}

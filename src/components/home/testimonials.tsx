@@ -20,7 +20,7 @@ function TestimonialCard({
   return (
     <figure
       className={cn(
-        "rounded-2xl border border-navy-900/[0.08] bg-white p-8",
+        "rounded-2xl border border-navy-900/[0.08] bg-white p-5 sm:p-8",
         ghost ? "shadow-soft" : "shadow-lift"
       )}
     >
@@ -33,21 +33,21 @@ function TestimonialCard({
           </span>
           <span className="ml-2 text-sm font-bold text-ink">5.0</span>
         </div>
-        <span className="rounded-full border border-navy-900/[0.08] bg-mist px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-navy-900/45">
+        <span className="rounded-full border border-navy-900/[0.08] bg-mist px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-navy-900/45 sm:py-1">
           Sample
         </span>
       </div>
 
-      <blockquote className="mt-5 text-[15px] leading-relaxed text-body">
+      <blockquote className="mt-4 text-sm leading-relaxed text-body sm:mt-5 sm:text-[15px]">
         &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
 
-      <figcaption className="mt-6 flex items-center gap-3 border-t border-navy-900/[0.07] pt-5">
+      <figcaption className="mt-5 flex items-center gap-3 border-t border-navy-900/[0.07] pt-4 sm:mt-6 sm:pt-5">
         <img
           src={testimonial.avatar}
           alt=""
           loading="lazy"
-          className="h-11 w-11 rounded-full object-cover ring-2 ring-mist"
+          className="h-10 w-10 rounded-full object-cover ring-2 ring-mist sm:h-11 sm:w-11"
         />
         <span className="flex flex-col">
           <span className="text-sm font-semibold text-ink">{testimonial.name}</span>
@@ -76,8 +76,8 @@ export function Testimonials() {
   const goTo = (index: number) => setActiveIndex(((index % count) + count) % count);
 
   return (
-    <section id="testimonials" className="relative overflow-hidden bg-mist py-20 md:py-28 lg:py-32">
-      <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
+    <section id="testimonials" className="relative overflow-hidden bg-mist py-14 sm:py-20 md:py-28 lg:py-32">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Testimonials"
           title="What Our Clients Say"
@@ -85,7 +85,7 @@ export function Testimonials() {
         />
 
         {/* Stage — layered deck (desktop) / single card (mobile) */}
-        <div className="relative mx-auto mt-14 flex max-w-5xl items-center lg:h-[400px]">
+        <div className="relative mx-auto mt-10 flex max-w-5xl items-center sm:mt-14 lg:h-[400px]">
           <div
             aria-hidden
             className="pointer-events-none absolute left-0 top-1/2 z-10 hidden w-[36%] -translate-y-1/2 scale-[0.88] opacity-40 lg:block"
@@ -120,12 +120,12 @@ export function Testimonials() {
         </div>
 
         {/* Controls */}
-        <div className="mt-8 flex items-center justify-center gap-5">
+        <div className="mt-7 flex items-center justify-center gap-4 sm:mt-8 sm:gap-5">
           <button
             type="button"
             onClick={() => goTo(activeIndex - 1)}
             aria-label="Previous testimonial"
-            className="grid h-11 w-11 place-items-center rounded-full border border-navy-900/[0.12] bg-white text-navy-900 shadow-soft transition hover:bg-navy-900 hover:text-white"
+            className="grid h-10 w-10 place-items-center rounded-full border border-navy-900/[0.12] bg-white text-navy-900 shadow-soft transition hover:bg-navy-900 hover:text-white sm:h-11 sm:w-11"
           >
             <ChevronLeft className="h-5 w-5" aria-hidden />
           </button>
@@ -150,13 +150,13 @@ export function Testimonials() {
             type="button"
             onClick={() => goTo(activeIndex + 1)}
             aria-label="Next testimonial"
-            className="grid h-11 w-11 place-items-center rounded-full border border-navy-900/[0.12] bg-white text-navy-900 shadow-soft transition hover:bg-navy-900 hover:text-white"
+            className="grid h-10 w-10 place-items-center rounded-full border border-navy-900/[0.12] bg-white text-navy-900 shadow-soft transition hover:bg-navy-900 hover:text-white sm:h-11 sm:w-11"
           >
             <ChevronRight className="h-5 w-5" aria-hidden />
           </button>
         </div>
 
-        <p className="mt-6 text-center text-xs text-navy-900/40">
+        <p className="mt-5 text-center text-[11px] text-navy-900/40 sm:mt-6 sm:text-xs">
           Testimonial cards display sample placeholder content pending verified client reviews.
         </p>
       </div>

@@ -21,7 +21,7 @@ const statsList: readonly StatItem[] = [
     suffix: "+",
     label: "Years of Experience",
     cardClassName: "border border-navy-900/[0.08] bg-white",
-    numberClassName: "text-3xl sm:text-4xl text-ink",
+    numberClassName: "text-2xl min-[380px]:text-3xl sm:text-4xl text-ink",
     labelClassName: "text-body",
   },
   {
@@ -30,7 +30,7 @@ const statsList: readonly StatItem[] = [
     label: "Certifications Delivered",
     icon: BadgeCheck,
     cardClassName: "bg-navy-900 text-white shadow-lift ring-1 ring-white/10",
-    numberClassName: "text-3xl sm:text-4xl text-white",
+    numberClassName: "text-2xl min-[380px]:text-3xl sm:text-4xl text-white",
     labelClassName: "text-white/70",
   },
   {
@@ -38,7 +38,7 @@ const statsList: readonly StatItem[] = [
     suffix: "+",
     label: "Clients Served",
     cardClassName: "border border-electric-500/20 bg-white/80 backdrop-blur shadow-glow",
-    numberClassName: "text-3xl sm:text-4xl text-ink",
+    numberClassName: "text-2xl min-[380px]:text-3xl sm:text-4xl text-ink",
     labelClassName: "text-body",
   },
   {
@@ -46,7 +46,7 @@ const statsList: readonly StatItem[] = [
     suffix: "%",
     label: "First-Time Success Rate",
     cardClassName: "border border-navy-900/[0.08] bg-white",
-    numberClassName: "text-3xl sm:text-4xl text-gradient",
+    numberClassName: "text-2xl min-[380px]:text-3xl sm:text-4xl text-gradient",
     labelClassName: "text-body",
   },
 ] as const;
@@ -57,7 +57,7 @@ const statsList: readonly StatItem[] = [
 export function TrustStats() {
   return (
     <section id="about" className="relative border-y border-navy-900/[0.05] bg-[#f8fbfe]/60 py-10 md:py-14">
-      <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Compact editorial header row */}
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
@@ -73,7 +73,7 @@ export function TrustStats() {
               A decade of focused compliance consulting — measured in certifications delivered and audits passed the first time.
             </p>
             <a
-              href="#journey"
+              href="#process"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-royal-600 transition-all hover:gap-2.5"
             >
               See how we work
@@ -83,14 +83,14 @@ export function TrustStats() {
         </div>
 
         {/* 4-Stat Compact Responsive Grid */}
-        <Reveal delay={0.08} className="mt-8 grid grid-cols-2 gap-3.5 sm:gap-5 lg:grid-cols-4">
+        <Reveal delay={0.08} className="mt-7 grid grid-cols-2 gap-3 sm:mt-8 sm:gap-5 lg:grid-cols-4">
           {statsList.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.label}
                 className={cn(
-                  "flex flex-col justify-between rounded-2xl p-5 sm:p-6 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift",
+                  "flex flex-col justify-between rounded-2xl p-4 sm:p-6 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift",
                   item.cardClassName
                 )}
               >
@@ -101,12 +101,12 @@ export function TrustStats() {
                     className={cn("font-display font-bold tracking-tight", item.numberClassName)}
                   />
                   {Icon ? (
-                    <span className="grid h-8 w-8 place-items-center rounded-lg bg-electric-500/20 text-electric-300">
-                      <Icon className="h-4 w-4" aria-hidden />
+                    <span className="grid h-7 w-7 min-[380px]:h-8 min-[380px]:w-8 place-items-center rounded-lg bg-electric-500/20 text-electric-300">
+                      <Icon className="h-3.5 w-3.5 min-[380px]:h-4 min-[380px]:w-4" aria-hidden />
                     </span>
                   ) : null}
                 </div>
-                <p className={cn("mt-2 text-xs sm:text-[13.5px] font-medium leading-snug", item.labelClassName)}>
+                <p className={cn("mt-2 text-[11px] min-[380px]:text-xs sm:text-[13.5px] font-medium leading-snug", item.labelClassName)}>
                   {item.label}
                 </p>
               </div>

@@ -16,8 +16,9 @@ const avatar = (id: string) =>
   `https://images.unsplash.com/${id}?q=80&w=160&h=160&auto=format&fit=crop&crop=faces`;
 
 export const images = {
-  /** Hero — a professional standing at the summit of an elevated landscape. */
-  hero: unsplash("photo-1519904981063-b0cf448d479e", "q=80&w=1400&auto=format&fit=crop"),
+  /** Hero — architectural building during daytime (Hd6YAKMqdvk). */
+  hero: unsplash("photo-1535388148627-7afc358927e7", "q=85&w=1600&auto=format&fit=crop"),
+  heroGraphic: "/images/hero-graphic.png",
 
   industries: {
     manufacturing: unsplash("photo-1504328345606-18bbc8c9d7d1", "q=80&w=1400&auto=format&fit=crop"),

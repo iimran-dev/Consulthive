@@ -2,36 +2,11 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { Award, Target, Users } from "lucide-react";
 import { BookButton, WhatsAppButton } from "@/components/shared/cta-buttons";
 import { images } from "@/data/images";
-import { cn } from "@/lib/utils";
 
 const EASE = [0.21, 0.6, 0.35, 1] as const;
 
-const trustChips = [
-  {
-    icon: Award,
-    value: "500+",
-    label: "Certifications Delivered",
-    className: "-left-3 top-16 sm:left-0 lg:-left-8",
-    delay: "0s",
-  },
-  {
-    icon: Users,
-    value: "100+",
-    label: "Clients Guided",
-    className: "-right-3 top-[42%] sm:right-0 lg:-right-10",
-    delay: "1.4s",
-  },
-  {
-    icon: Target,
-    value: "95%",
-    label: "First-Time Success",
-    className: "bottom-10 left-[2%] lg:left-[6%]",
-    delay: "2.6s",
-  },
-] as const;
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -113,65 +88,49 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* ---------------- Visual: The Certification Journey ---------------- */}
+        {/* ---------------- Visual: Standards • People • Progress ---------------- */}
         <motion.div
-          initial={reduce ? false : { opacity: 0, scale: 0.94 }}
+          initial={reduce ? false : { opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.15, ease: EASE }}
-          className="relative mx-auto h-[400px] w-full max-w-[540px] sm:h-[480px] lg:h-[560px] lg:max-w-none"
+          transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
+          className="relative mx-auto flex w-full max-w-[480px] items-center justify-center sm:max-w-[520px] lg:max-w-none"
         >
-          {/* Glow + orbital rings */}
+          {/* Soft architectural backdrop disc */}
           <div
             aria-hidden
-            className="absolute inset-10 rounded-full bg-gradient-to-tr from-electric-500/20 via-royal-500/10 to-transparent blur-2xl"
+            className="absolute -left-3 -top-3 h-[96%] w-[96%] rounded-full bg-[#dce8f5]/60 sm:-left-5 sm:-top-5"
           />
-          <div aria-hidden className="absolute -inset-3 rounded-full border border-navy-900/[0.07]" />
-          <div
-            aria-hidden
-            className="absolute -inset-10 animate-spin-slower rounded-full border border-dashed border-royal-500/25 sm:-inset-12"
-          >
-            <span className="absolute -top-1 left-1/2 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-electric-500 shadow-glow" />
-          </div>
-          <div aria-hidden className="absolute inset-0 animate-spin-reverse rounded-full border border-electric-500/15" />
 
-          {/* Summit image */}
-          <div className="relative h-full w-full overflow-hidden rounded-full shadow-lift ring-1 ring-navy-900/10">
-            <Image
-              src={images.hero}
-              alt="A professional standing at the summit of a mountain — the certification journey"
-              fill
-              priority
-              sizes="(max-width: 1024px) 92vw, 44vw"
-              className="object-cover"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-gradient-to-t from-navy-950/45 via-transparent to-navy-900/10"
-            />
-            <p className="absolute inset-x-0 bottom-9 text-center text-[11px] font-semibold uppercase tracking-[0.34em] text-white/85">
-              The Certification Journey
-            </p>
-          </div>
-
-          {/* Floating trust indicators */}
-          {trustChips.map((chip) => (
-            <div
-              key={chip.label}
-              style={{ animationDelay: chip.delay }}
-              className={cn(
-                "absolute flex items-center gap-3 rounded-2xl border border-white/70 bg-white/75 px-4 py-3 shadow-lift backdrop-blur-md animate-float",
-                chip.className
-              )}
-            >
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-navy-900 to-royal-700 text-white">
-                <chip.icon className="h-4.5 w-4.5" aria-hidden />
-              </span>
-              <span className="flex flex-col leading-tight">
-                <span className="font-display text-lg font-bold text-ink">{chip.value}</span>
-                <span className="text-[11px] font-medium text-navy-900/55">{chip.label}</span>
-              </span>
+          {/* Main circular composition */}
+          <div className="relative aspect-square w-full max-w-[460px] overflow-hidden rounded-full bg-navy-950 shadow-lift ring-1 ring-navy-900/10 sm:max-w-[500px] lg:max-w-[530px]">
+            {/* Full circle building image */}
+            <div className="absolute inset-0">
+              <Image
+                src={images.hero}
+                alt="Consulthive — Standards, People, Progress"
+                fill
+                priority
+                sizes="(max-width: 1024px) 90vw, 45vw"
+                className="object-cover object-center"
+              />
+              {/* Subtle tint overlay to keep the typography crisp and legible */}
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-navy-950/30 to-navy-950/15"
+              />
             </div>
-          ))}
+
+            {/* Typography overlay over building: STANDARDS / PEOPLE / PROGRESS */}
+            <div className="absolute left-7 top-1/2 z-10 -translate-y-1/2 sm:left-10 lg:left-12">
+              <h2 className="font-display text-2xl font-bold uppercase leading-[1.12] tracking-tight text-white drop-shadow-md sm:text-3xl lg:text-[36px]">
+                STANDARDS
+                <br />
+                PEOPLE
+                <br />
+                PROGRESS
+              </h2>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
